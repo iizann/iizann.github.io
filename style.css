@@ -60,13 +60,6 @@ nav {
     transition: color 0.2s;
 }
 
-.nav-links a {
-    color: var(--texto-gris);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
-
 .nav-links a:hover {
     color: var(--azul-neon);
 }
@@ -200,7 +193,7 @@ section {
 /* ── HABILIDADES ── */
 .habilidades-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
@@ -236,7 +229,7 @@ section {
 /* ── PROYECTOS ── */
 .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
@@ -341,4 +334,52 @@ footer {
 
 footer span {
     color: var(--azul-neon);
+}
+.proyecto-pronto {
+    color: var(--texto-gris);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-btns .btn-secondary {
+    margin-left: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 0.8rem 5vw;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #inicio {
+        padding-top: 130px;
+    }
+
+    section {
+        padding: 5rem 5vw;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contacto-item {
+        width: 100%;
+        max-width: 300px;
+    }
 }
